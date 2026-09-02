@@ -1,6 +1,6 @@
 const Layout = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-300">
       <aside className=" w-87 h-screen fixed top-0 left-0 overflow-auto p-5 ">
         <div className="bg-white p-5 shadow-2xl">welcome</div>
       </aside>
