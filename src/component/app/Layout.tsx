@@ -53,7 +53,7 @@ const Layout = () => {
       </section>
 
       <aside className="w-80 h-screen fixed right-0 top-0 overflow-auto p-5">
-        <div className="bg-white shadow-2xl rounded-xl p-5">welcome</div>
+        <div className="bg-white shadow-2xl rounded-xl p-4">welcome</div>
       </aside>
     </div>
   );
