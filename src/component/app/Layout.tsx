@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Avatar from "../shared/Avatar";
 
 const Layout = () => {
+  const asideSize = 310;
   const menus = [
     {
       icon: "ri-home-9-line",
@@ -21,12 +22,26 @@ const Layout = () => {
   ];
   return (
     <div className="min-h-screen bg-gray-100">
-      <aside className=" w-80 h-screen fixed top-0 left-0 overflow-auto p-5">
+      <aside
+        className="h-screen fixed top-0 left-0 overflow-auto p-5"
+        style={{ width: asideSize }}
+      >
         <div className=" space-y-8 bg-white h-full p-5 rounded-xl bg-linear-to-r from-blue-500 to-purple-500">
           <Avatar
             img="/images/avt.png"
             title="Ram shiralkar"
             subtitle="Sr. engineeer"
+          />
+          <Avatar
+            size="md"
+            img="/images/avt.png"
+            title="Ram shiralkar"
+            subtitle={
+              <div className="flex gap-3 items-center">
+                <div className="w-2 h-2 rounded-full bg-green-600" />
+                <label className="text-gray-500">online</label>
+              </div>
+            }
           />
           <div>
             {menus.map((item, index) => (
@@ -48,11 +63,20 @@ const Layout = () => {
         </div>
       </aside>
 
-      <section className="ml-80 w-[calc(100%-640px)] py-5">
+      <section
+        className="py-5"
+        style={{
+          marginLeft: asideSize,
+          width: `calc(100% - ${asideSize * 2}px)`,
+        }}
+      >
         <div className="bg-white p-5 shadow-2xl rounded-xl">welcome</div>
       </section>
 
-      <aside className="w-80 h-screen fixed right-0 top-0 overflow-auto p-5">
+      <aside
+        className="h-screen fixed right-0 top-0 overflow-auto p-5"
+        style={{ width: asideSize }}
+      >
         <div className="bg-white shadow-2xl rounded-xl p-5">welcome</div>
       </aside>
     </div>

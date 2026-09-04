@@ -1,11 +1,12 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 
 interface AvatarInterface {
   img?: string;
   title?: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
   titleColor?: string;
   subtitleColor?: string;
+  size?: "lg" | "md";
 }
 
 const Avatar: FC<AvatarInterface> = ({
@@ -14,6 +15,7 @@ const Avatar: FC<AvatarInterface> = ({
   subtitle = "subtitle missing",
   titleColor = "#000",
   subtitleColor = "#ddd",
+  size = "lg",
 }) => {
   return (
     <div className="flex gap-3 items-center">
@@ -21,23 +23,18 @@ const Avatar: FC<AvatarInterface> = ({
         <img
           src={img}
           alt="img"
-          className="w-12 h-12 rounded-full object-cover border border-white"
+          className={`${size === "lg" ? "w-12 h-12" : "w-8 h-8"} rounded-full object-cover border border-white`}
         />
       )}
       {title && subtitle && (
         <div className="flex flex-col">
           <h1
-            className="text-lg/6 font-medium"
+            className={`${size === "lg" ? "text-lg/6" : "text-base"} font-medium`}
             style={{ color: titleColor }}
           >
             {title}
           </h1>
-          <label
-            className="text-sm font-medium"
-            style={{ color: subtitleColor }}
-          >
-            {subtitle}
-          </label>
+          <div style={{color:subtitleColor}}>{subtitle}</div>
         </div>
       )}
     </div>
