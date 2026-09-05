@@ -29,12 +29,12 @@ const Avatar: FC<AvatarInterface> = ({
       {title && subtitle && (
         <div className="flex flex-col">
           <h1
-            className={`${size === "lg" ? "text-lg/6" : "text-base"} font-medium`}
+            className={`${size === "lg" ? "text-lg/4" : "text-sm"} font-medium`}
             style={{ color: titleColor }}
           >
             {title}
           </h1>
-          <div style={{color:subtitleColor}}>{subtitle}</div>
+          <div style={{ color: subtitleColor }}>{subtitle}</div>
         </div>
       )}
     </div>
